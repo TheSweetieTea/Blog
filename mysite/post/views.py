@@ -41,3 +41,6 @@ def add_post(request: HttpRequest):
                   context={
                       'form': form
                   })
+
+def test():
+    pass
