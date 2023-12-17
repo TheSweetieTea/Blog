@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <p class="fs-2 text-capitalize">{{ post.title }}</p>
+        <p style="width: 70%; text-align: left;">{{ post.text }}</p>
+    </div>
+{% endblock %}
