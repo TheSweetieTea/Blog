@@ -1,5 +1,5 @@
 from django.http import HttpRequest
-from django.shortcuts import redirect, render, HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render, HttpResponse
 from .models import *
 from .forms import *
 
@@ -13,8 +13,8 @@ def welcome(request):
                   context={'posts': posts})
 
 
-def post_detail(request, post_id):
-    post = Post.objects.get(id=post_id)
+def post_detail(request, post_slug):
+    post = get_object_or_404(Post, slug=post_slug)
 
     return render(request=request, 
                   template_name='post/post_detail.html',
