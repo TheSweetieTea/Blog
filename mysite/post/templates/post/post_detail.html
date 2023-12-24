@@ -7,4 +7,19 @@
         <p class="fs-2 text-capitalize">{{ post.title }}</p>
         <p style="width: 70%; text-align: left;">{{ post.text }}</p>
     </div>
+
+    {% for comment in comments %}
+    <div class="card w-75 mb-3 mx-auto">
+        <div class="card-body ">
+            <p class="card-title">{{ comment.author }}</p>
+            <p class="card-time">{{ comment.create_time }}</p>
+            <p class="card-text">
+                {{ comment.text }}
+            </p>
+        </div>
+    </div>  
+    <!-- {% empty %} -->
+    <!-- <p>Тут пока что нет комментариев. </p> -->
+    {% endfor %}
+    {% include 'post/forms/comment_form.html' %}
 {% endblock %}
